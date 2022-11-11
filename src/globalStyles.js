@@ -8,12 +8,10 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    color: #848484;
     font-family: 'Rock Salt', cursive;
   }
 
-  label, input, button, span {
-    color: #848484;
+  label, input, span {
     font-family: 'VT323', monospace;
     font-size: 18px;
   }

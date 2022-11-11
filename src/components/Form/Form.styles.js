@@ -30,6 +30,7 @@ export const FormContent = styled.form`
 `;
 
 export const FormHeader = styled.h1`
+  color: #fff;
   font-size: 42px;
   text-align: center;
 `;
@@ -39,8 +40,16 @@ export const FormSubmitBtn = styled.button`
   width: 50%;
   height: 50px;
   border-radius: 15px;
-  border: none;
-  padding-left: 40px;
+  border: 2px solid #51a9c4;
   background: #51a9c4;
   margin-top: 30px;
+  font-size: 32px;
+  font-family: "VT323", monospace;
+  color: white;
+  &:hover, &:focus {
+    transform: scale(0.98);
+    background: #fff;
+    color: black;
+    transition: 0.2s all ease;
+  }
 `;

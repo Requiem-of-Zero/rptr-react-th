@@ -8,6 +8,7 @@ export const InputWrapper = styled.div`
 `;
 
 export const InputLabel = styled.label`
+  color: #fff;
   margin-bottom: -10px;
   padding-top: 15px;
   font-size: 20px;
@@ -26,6 +27,7 @@ export const InputContent = styled.div`
     border: none;
     padding-left: 40px;
     font-size: 18px;
+    color: black;
     &:invalid ~ span {
       display: block;
     }
@@ -41,6 +43,6 @@ export const ErrorMessage = styled.span`
 
 export const IconWrapper = styled.div`
   position: absolute;
-  top: 35%;
+  top: 15px;
   left: 15px;
 `;

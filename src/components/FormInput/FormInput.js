@@ -10,12 +10,13 @@ import {
 
 const FormInput = ({ type, placeholder, label, onChange, errorMsg }) => {
   const inputIcon = type === "email" ? <FaUser /> : <FaLock />;
-
+  const handleIcon = errorMsg ? '15%' : '35%';
+  
   return (
     <InputWrapper>
       <InputLabel>{label}</InputLabel>
       <InputContent>
-        <IconWrapper>{inputIcon}</IconWrapper>
+        <IconWrapper top={handleIcon}>{inputIcon}</IconWrapper>
         <input
           type={type}
           name={type}
