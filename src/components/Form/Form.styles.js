@@ -6,14 +6,14 @@ export const FormWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: teal;
+  background-image: url(https://wallpaperaccess.com/full/2454628.png);
   &:before {
     content: "";
     position: absolute;
     background: rgba(255, 255, 255, 0.7);
     transform: rotate(-3deg);
     border-radius: 15px;
-    width: clamp(50%, 600px, 50%);
+    width: clamp(50%, 600px, 90%);
     height: 550px;
   }
 `;
@@ -22,8 +22,8 @@ export const FormContent = styled.form`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.9);
-  width: clamp(50%, 600px, 50%);
+  background: rgba(0, 0, 0, 0.9);
+  width: clamp(50%, 600px, 90%);
   height: 550px;
   border-radius: 20px;
   z-index: 9;
