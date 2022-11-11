@@ -5,7 +5,7 @@ import Form from "./components/Form/Form";
 
 class App extends React.Component {
   render() {
-    const { name } = this.props;
+
     return (
       <>
         <Form {...formData}/>

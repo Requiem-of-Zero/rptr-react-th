@@ -20,7 +20,7 @@ export const FormWrapper = styled.div`
 
 export const FormContent = styled.form`
   display: flex;
-  justify-content: center;
+  align-items: center;
   flex-direction: column;
   background: rgba(0, 0, 0, 0.9);
   width: clamp(50%, 600px, 90%);

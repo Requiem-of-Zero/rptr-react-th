@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 20px;
+  width: 50%;
 `;
 
 export const InputLabel = styled.label`
@@ -17,9 +17,8 @@ export const InputLabel = styled.label`
 export const InputContent = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   position: relative;
-  width: 50%;
+  width: 100%;
   input {
     width: 100%;
     height: 50px;
@@ -28,6 +27,7 @@ export const InputContent = styled.div`
     padding-left: 40px;
     font-size: 18px;
     color: black;
+
     &:invalid ~ span {
       display: block;
     }
@@ -39,6 +39,7 @@ export const ErrorMessage = styled.span`
   padding-top: 15px;
   color: red;
   display: none;
+  text-align: center;
 `;
 
 export const IconWrapper = styled.div`

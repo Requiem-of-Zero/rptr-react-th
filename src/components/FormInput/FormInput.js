@@ -8,7 +8,7 @@ import {
   InputWrapper,
 } from "./FormInput.styles";
 
-const FormInput = ({ type, placeholder, label, onChange, errorMsg }) => {
+const FormInput = ({ type, pattern, placeholder, label, onChange, errorMsg }) => {
   const inputIcon = type === "email" ? <FaUser /> : <FaLock />;
   const handleIcon = errorMsg ? '15%' : '35%';
   
@@ -20,6 +20,7 @@ const FormInput = ({ type, placeholder, label, onChange, errorMsg }) => {
         <input
           type={type}
           name={type}
+          pattern={pattern}
           placeholder={placeholder}
           onChange={(e) => onChange(e)}
         ></input>
