@@ -8,12 +8,12 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    font-family: 'Rock Salt', cursive;
+    font-family: 'Varela Round';
   }
 
   label, input, span {
-    font-family: 'VT323', monospace;
-    font-size: 18px;
+    font-family: 'Varela Round';
+    font-size: 13px;
   }
 
 `;

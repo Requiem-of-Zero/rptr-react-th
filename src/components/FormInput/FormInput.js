@@ -8,15 +8,21 @@ import {
   InputWrapper,
 } from "./FormInput.styles";
 
-const FormInput = ({ type, pattern, placeholder, label, onChange, errorMsg }) => {
+const FormInput = ({
+  type,
+  pattern,
+  placeholder,
+  label,
+  onChange,
+  errorMsg,
+}) => {
   const inputIcon = type === "email" ? <FaUser /> : <FaLock />;
-  const handleIcon = errorMsg ? '15%' : '35%';
-  
+
   return (
     <InputWrapper>
       <InputLabel>{label}</InputLabel>
       <InputContent>
-        <IconWrapper top={handleIcon}>{inputIcon}</IconWrapper>
+        <IconWrapper>{inputIcon}</IconWrapper>
         <input
           type={type}
           name={type}

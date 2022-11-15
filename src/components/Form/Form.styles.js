@@ -7,6 +7,7 @@ export const FormWrapper = styled.div`
   justify-content: center;
   align-items: center;
   background-image: url(https://wallpaperaccess.com/full/2454628.png);
+  background-size: cover;
   &:before {
     content: "";
     position: absolute;
@@ -22,17 +23,22 @@ export const FormContent = styled.form`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 1);
   width: clamp(50%, 600px, 90%);
   height: 550px;
   border-radius: 20px;
   z-index: 9;
+  transition: 0.2s all ease;
 `;
 
-export const FormHeader = styled.h1`
-  color: #fff;
-  font-size: 42px;
-  text-align: center;
+export const FormHeaderContainer = styled.div`
+  padding-top: 15px;
+  height: 200px;
+`;
+
+export const Logo = styled.img`
+  width: clamp(200px, 150px, 125px);
+  height: auto;
 `;
 
 export const FormSubmitBtn = styled.button`
@@ -40,16 +46,26 @@ export const FormSubmitBtn = styled.button`
   width: 50%;
   height: 50px;
   border-radius: 15px;
-  border: 2px solid #51a9c4;
-  background: #51a9c4;
+  border: 2px solid rgb(47, 203, 252);
+  background: rgb(47, 203, 252);
   margin-top: 30px;
-  font-size: 32px;
-  font-family: "VT323", monospace;
+  font-size: 28px;
+  font-family: "Varela Round";
   color: white;
-  &:hover, &:focus {
+  cursor: pointer;
+  &:hover,
+  &:focus {
     transform: scale(0.98);
     background: #fff;
     color: black;
     transition: 0.2s all ease;
   }
+`;
+
+export const SubmitErrorMsg = styled.span`
+  font-size: 16px;
+  padding-top: 15px;
+  color: red;
+  display: block;
+  text-align: center;
 `;

@@ -23,10 +23,17 @@ export const InputContent = styled.div`
     width: 100%;
     height: 50px;
     border-radius: 15px;
-    border: none;
     padding-left: 40px;
-    font-size: 18px;
+    font-size: 14px;
     color: black;
+
+    &:focus {
+      outline: 2px solid rgb(47, 203, 252);
+    }
+
+    &:invalid {
+      outline: 1px solid red;
+    }
 
     &:invalid ~ span {
       display: block;

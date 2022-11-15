@@ -13,10 +13,8 @@ const formData = {
       type: "password",
       placeholder: "Must be at least 4 characters",
       label: "Password",
-      pattern:
-        "^[0-9A-Za-z]{4,16}$",
-      errorMsg:
-        "Password should be 4-16 characters long!",
+      pattern: "^[0-9A-Za-z]{4,16}$",
+      errorMsg: "Password should be 4-16 characters long!",
       required: true,
     },
   ],
