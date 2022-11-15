@@ -33,11 +33,11 @@ export const FormContent = styled.form`
 
 export const FormHeaderContainer = styled.div`
   padding-top: 15px;
-  height: 200px;
+  height: 150px;
 `;
 
 export const Logo = styled.img`
-  width: clamp(200px, 150px, 125px);
+  width: clamp(150px, 1250px, 125px);
   height: auto;
 `;
 
