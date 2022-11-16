@@ -48,7 +48,7 @@ export const FormSubmitBtn = styled.button`
   border-radius: 15px;
   border: 2px solid rgb(47, 203, 252);
   background: rgb(47, 203, 252);
-  margin-top: 30px;
+  margin: 30px 0 15px 0;
   font-size: 28px;
   font-family: "Varela Round";
   color: white;
@@ -63,7 +63,7 @@ export const FormSubmitBtn = styled.button`
 `;
 
 export const SubmitErrorMsg = styled.span`
-  font-size: 16px;
+  font-size: 12px;
   padding-top: 15px;
   color: red;
   display: block;

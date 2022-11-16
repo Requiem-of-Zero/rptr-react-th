@@ -42,7 +42,7 @@ export const InputContent = styled.div`
 `;
 
 export const ErrorMessage = styled.span`
-  font-size: 16px;
+  font-size: 12px;
   padding-top: 15px;
   color: red;
   display: none;
