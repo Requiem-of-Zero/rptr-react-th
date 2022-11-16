@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { IconContext } from "react-icons";
-import { AiFillCheckCircle } from "react-icons/ai";
-import { GrEdit } from "react-icons/gr";
+import { AiFillCheckCircle, AiFillEdit } from "react-icons/ai";
 import { RiDeleteBin5Line } from "react-icons/ri";
+import GlobalStyle from "../../globalStyles";
 import Navigation from "../Navigation/Navigation";
+
 import {
   ActionButtonContainer,
   TodoHeader,
@@ -12,7 +12,6 @@ import {
   TodosList,
   TodosWrapper,
 } from "./Todo.styles";
-import GlobalStyle from "../../globalStyles";
 
 const Todo = () => {
   const [toDo, setTodo] = useState([
@@ -33,8 +32,24 @@ const Todo = () => {
   const [newTodo, setNewTodo] = useState("");
   const [updateTodo, setUpdate] = useState("");
 
-  const addTask = () => {};
-  console.log(newTodo)
+  const addTodo = () => {
+    if (newTodo) {
+      let newIdx = toDo.length + 1;
+      let entry = {
+        id: newIdx,
+        title: newTodo,
+        status: false,
+        editing: false,
+      };
+      setTodo([...toDo, entry]);
+    }
+  };
+
+  const deleteTodo = (id) => {
+    let newState = toDo.filter((task) => task.id !== id);
+    setTodo(newState);
+  };
+
   return (
     <TodosWrapper>
       {/* <Navigation /> */}
@@ -43,8 +58,13 @@ const Todo = () => {
         <TodoHeader>My Todo List</TodoHeader>
         <TodosList>
           <div className="search_row">
-            <input type="text" onChange={(e) => setNewTodo(e.target.value)}/>
-            <button onClick={addTask}>New</button>
+            <input
+              type="text"
+              placeholder="Search and Add Task"
+              onChange={(e) => setNewTodo(e.target.value)}
+              value={newTodo}
+            />
+            <button onClick={addTodo}>New</button>
           </div>
           {toDo &&
             toDo.map((todo, i) => {
@@ -53,8 +73,11 @@ const Todo = () => {
                   <TodoItem>
                     <p>{todo.title}</p>
                     <ActionButtonContainer>
-                      <GrEdit />
-                      <RiDeleteBin5Line />
+                      <AiFillEdit className="edit" />
+                      <RiDeleteBin5Line
+                        className="delete"
+                        onClick={() => deleteTodo(todo.id)}
+                      />
                     </ActionButtonContainer>
                   </TodoItem>
                 </li>

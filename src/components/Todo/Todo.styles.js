@@ -15,6 +15,7 @@ export const TodoHeader = styled.h1`
   text-align: center;
   font-family: "Varela Round";
   font-size: 46px;
+  padding-bottom: 40px;
 `;
 
 export const TodosContentContainer = styled.div`
@@ -29,21 +30,66 @@ export const TodosList = styled.ul`
   font-family: "Varela Round";
   list-style: none;
   padding: 0;
-  gap: 20px;
+
+  .search_row {
+    display: flex;
+    justify-content: space-between;
+    input {
+      width: clamp(60%, 500px, 400px);
+      height: 30px;
+      border-radius: 40px;
+      border: none;
+      padding-left: 30px;
+    }
+    button {
+      background: rgb(47, 203, 252);
+      font-family: "Varela Round";
+      border: 2px solid rgb(47, 203, 252);
+      padding: 10px 40px;
+      border-radius: 25px;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      
+      &:hover,
+      &:focus {
+        transform: scale(0.98);
+        background: #fff;
+        color: black;
+        transition: 0.2s all ease;
+      }
+    }
+  }
 `;
 
 export const TodoItem = styled.div`
   display: flex;
   align-items: center;
+  padding: 20px 0;
   justify-content: space-between;
   width: 100%;
-  
+  border-bottom: 1px solid black;
 `;
 
 export const ActionButtonContainer = styled.div`
   display: flex;
-
+  gap: 30px;
   svg {
+    cursor: pointer;
     fill: black;
+  }
+
+  .edit {
+    &:hover {
+      transition: 0.4s all ease;
+      fill: orange;
+    }
+  }
+
+  .delete {
+    &:hover {
+      transition: 0.4s all ease;
+      fill: red;
+    }
   }
 `;
