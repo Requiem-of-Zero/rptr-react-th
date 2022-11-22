@@ -29,6 +29,10 @@ const Todo = () => {
 
   const [newTodo, setNewTodo] = useState("");
 
+  // useEffect(() => {
+  //   searchTodos(toDos, newTodo)
+  // }, [newTodo])
+
   const addTodo = () => {
     if (newTodo) {
       let newIdx = toDos.length + 1;
@@ -68,6 +72,16 @@ const Todo = () => {
     setTodos(newState);
   };
 
+  const searchTodos = (e, todos, searchStr) => {
+    setNewTodo(e.target.value)
+    let newState = todos.filter((todo) => {
+      if(todo.title.includes(searchStr)){
+        return todo
+      }
+    })
+    setTodos(newState)
+  };
+  
   return (
     <TodosWrapper>
       {/* <Navigation /> */}
@@ -80,7 +94,7 @@ const Todo = () => {
             <input
               type="text"
               placeholder="Search and Add Task"
-              onChange={(e) => setNewTodo(e.target.value)}
+              onChange={(e) => searchTodos(e, toDos, newTodo)}
               value={newTodo}
             />
             <button onClick={addTodo}>New</button>
