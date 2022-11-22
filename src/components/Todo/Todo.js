@@ -1,20 +1,17 @@
 import React, { useState } from "react";
-import { AiFillCheckCircle, AiFillEdit } from "react-icons/ai";
-import { RiDeleteBin5Line } from "react-icons/ri";
 import GlobalStyle from "../../globalStyles";
 import Navigation from "../Navigation/Navigation";
+import TodoItem from "../TodoItem/TodoItem";
 
 import {
-  ActionButtonContainer,
   TodoHeader,
-  TodoItem,
   TodosContentContainer,
   TodosList,
   TodosWrapper,
 } from "./Todo.styles";
 
 const Todo = () => {
-  const [toDo, setTodo] = useState([
+  const [toDos, setTodos] = useState([
     {
       id: 1,
       title: "First Task",
@@ -30,25 +27,45 @@ const Todo = () => {
   ]);
 
   const [newTodo, setNewTodo] = useState("");
-  const [updateTodo, setUpdate] = useState("");
 
   const addTodo = () => {
     if (newTodo) {
-      let newIdx = toDo.length + 1;
+      let newIdx = toDos.length + 1;
       let entry = {
         id: newIdx,
         title: newTodo,
         status: false,
         editing: false,
       };
-      setTodo([...toDo, entry]);
+      setTodos([...toDos, entry]);
     }
   };
 
   const deleteTodo = (id) => {
-    let newState = toDo.filter((task) => task.id !== id);
-    setTodo(newState);
+    let newState = toDos.filter((task) => task.id !== id);
+    setTodos(newState);
   };
+
+  const setEditing = (id) => {
+    let newState = [...toDos].map((todo) => {
+      let { editing } = todo;
+      if (todo.id === id) {
+        todo.editing = !editing;
+      }
+      return todo;
+    });
+    setTodos(newState);
+  };
+
+  const updateTodo = (newTodoTitle, id) => {
+    let newState = [...toDos].map((todo) => {
+      if (todo.id === id) {
+        todo.title = newTodoTitle
+      }
+      return todo;
+    });
+    setTodos(newState)
+  }
 
   return (
     <TodosWrapper>
@@ -66,20 +83,17 @@ const Todo = () => {
             />
             <button onClick={addTodo}>New</button>
           </div>
-          {toDo &&
-            toDo.map((todo, i) => {
+          {toDos &&
+            toDos.map((todo, i) => {
               return (
                 <li key={"todo-" + i}>
-                  <TodoItem>
-                    <p>{todo.title}</p>
-                    <ActionButtonContainer>
-                      <AiFillEdit className="edit" />
-                      <RiDeleteBin5Line
-                        className="delete"
-                        onClick={() => deleteTodo(todo.id)}
-                      />
-                    </ActionButtonContainer>
-                  </TodoItem>
+                  <TodoItem
+                    deleteTodo={deleteTodo}
+                    setEditing={setEditing}
+                    updateTodo={updateTodo}
+                    todoId={todo.id}
+                    {...todo}
+                  />
                 </li>
               );
             })}
