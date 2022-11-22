@@ -32,8 +32,16 @@ export const TodosList = styled.ul`
   padding: 0;
 
   .search_row {
+    position: relative;
     display: flex;
     justify-content: space-between;
+    
+    .searchbar_icon {
+      position: absolute;
+      font-size: 26px;
+      top: 5px;
+      left: 4px;
+    }
     input {
       width: clamp(60%, 500px, 400px);
       height: 30px;

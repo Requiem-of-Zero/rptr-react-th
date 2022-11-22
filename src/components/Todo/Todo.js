@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { BiSearch } from "react-icons/bi";
 import GlobalStyle from "../../globalStyles";
 import Navigation from "../Navigation/Navigation";
 import TodoItem from "../TodoItem/TodoItem";
@@ -60,12 +61,12 @@ const Todo = () => {
   const updateTodo = (newTodoTitle, id) => {
     let newState = [...toDos].map((todo) => {
       if (todo.id === id) {
-        todo.title = newTodoTitle
+        todo.title = newTodoTitle;
       }
       return todo;
     });
-    setTodos(newState)
-  }
+    setTodos(newState);
+  };
 
   return (
     <TodosWrapper>
@@ -75,6 +76,7 @@ const Todo = () => {
         <TodoHeader>My Todo List</TodoHeader>
         <TodosList>
           <div className="search_row">
+            <BiSearch className="searchbar_icon" />
             <input
               type="text"
               placeholder="Search and Add Task"
