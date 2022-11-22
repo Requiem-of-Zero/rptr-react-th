@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { AiFillCheckCircle, AiFillEdit } from "react-icons/ai";
 import { RiDeleteBin5Line } from "react-icons/ri";
-import { ActionButtonContainer, TodoItemWrapper } from "./TodoItem.styles";
+import {
+  ActionButtonContainer,
+  EditingInput,
+  TodoItemWrapper,
+} from "./TodoItem.styles";
 
 const TodoItem = ({
   title,
@@ -16,19 +20,19 @@ const TodoItem = ({
   return (
     <TodoItemWrapper>
       {editing ? (
-        <input
+        <EditingInput
           type="text"
           value={newTodoItem}
           onChange={(e) => {
             setUpdate(e.target.value);
           }}
           onKeyDown={(e) => {
-            if(e.code === 'Enter'){
-              updateTodo(newTodoItem, todoId)
-              setEditing(todoId)
+            if (e.code === "Enter") {
+              updateTodo(newTodoItem, todoId);
+              setEditing(todoId);
             }
           }}
-        ></input>
+        ></EditingInput>
       ) : (
         <p onClick={() => setEditing(todoId)}>{title}</p>
       )}

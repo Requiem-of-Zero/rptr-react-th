@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const TodoItemWrapper = styled.div`
   display: flex;
@@ -30,4 +30,15 @@ export const ActionButtonContainer = styled.div`
       fill: red;
     }
   }
+`;
+
+export const EditingInput = styled.input`
+  width: 50%;
+  height: 35px;
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 36px;
+  border-radius: 15px;
+  padding: 10px 20px;
 `;
